@@ -8,7 +8,7 @@ void vertex() {
 }
 
 void fragment() {
-	if (int(floor(UV.x * 20.0) + floor(UV.y * 20.0)) % 2 == 0) {
+	if (int(floor(UV.x * 200.0) + floor(UV.y * 200.0)) % 2 == 0) {
 		ALBEDO = col_a.rgb;
 	} else {
 		ALBEDO = col_b.rgb;

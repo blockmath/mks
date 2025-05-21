@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuhcetcdj8ong"]
+
+[ext_resource type="Script" path="res://node_md.gd" id="1_oehj0"]
+[ext_resource type="FontFile" uid="uid://b383wgoiwxces" path="res://minski-mono.ttf" id="2_wvpts"]
+
+[node name="Character" type="Node3D"]
+script = ExtResource("1_oehj0")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2, 0)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 1)
+text = "the
+quick brown
+fox jumps over
+the lazy dog"
+font = ExtResource("2_wvpts")
+outline_size = 0
+uppercase = true

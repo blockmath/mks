@@ -1,6 +1,6 @@
 extends Camera3D
 
-
+const CAMERA_IS_DEBUG : bool = true
 
 @onready var rotation_root : NodeMD = $"../../Root"
 @onready var position_root : NodeMD = $"../../Root/Root"
@@ -30,9 +30,10 @@ func _process(delta : float) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if Input.is_action_just_pressed("ui_esc"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	var i : Vector3 = basis * Vector3(Input.get_axis("ui_left", "ui_right"), 0, Input.get_axis("ui_up", "ui_down"))
-	position_root.global_position -= i * delta * 10
-	_offload_position()
+	var i : Vector3 = basis * Vector3(Input.get_axis("ls_lt", "ls_rt"), 0, Input.get_axis("ls_fw", "ls_bw"))
+	if CAMERA_IS_DEBUG:
+		position_root.global_position -= i * delta * 10
+		_offload_position()
 	rotation_root.m_rot.y = -look_angle.y
 	light_root.m_rot.y = look_angle.y
 	look_angle.x = clampf(look_angle.x, deg_to_rad(-85), deg_to_rad(85))

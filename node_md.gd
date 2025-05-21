@@ -9,7 +9,7 @@ func _update_basis() -> void:
 	var br_y : Basis = Basis(Vector3(cosh(m_rot.y), 0, sinh(m_rot.y)), Vector3(0, 1, 0), Vector3(sinh(m_rot.y), 0, cosh(m_rot.y)))
 	var br_z : Basis = Basis(Vector3(cos(m_rot.z), -sin(m_rot.z), 0), Vector3(sin(m_rot.z), cos(m_rot.z), 0), Vector3(0, 0, 1))
 	
-	basis = br_z * br_y * br_x
+	basis = br_z * br_x * br_y
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
